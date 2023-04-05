@@ -1,0 +1,21 @@
+.poster {
+	width: 100vw;
+	height: 700px;
+	background-image: url('https://images.unsplash.com/photo-1630839437035-dac17da580d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80');
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.posterInfo {
+		color: white;
+		width: 1200px;
+		.posterTitle {
+			font-weight: 700;
+			font-size: 50px;
+			margin-bottom: 20px;
+		}
+		.posterText {
+			font-weight: 500;
+			font-size: 30px;
+		}
+	}
+}

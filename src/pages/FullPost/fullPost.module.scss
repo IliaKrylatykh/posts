@@ -1,0 +1,95 @@
+.container {
+	width: 100vw;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	.poster {
+		height: 700px;
+		background-image: url('https://images.unsplash.com/photo-1630839437035-dac17da580d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1315&q=80');
+	}
+	.fill {
+		width: 100vw;
+		height: 1000px;
+		background-color: #f4f4f4;
+	}
+	.postContainer {
+		position: absolute;
+		z-index: 10;
+		width: 80vw;
+		top: 100px;
+		.title {
+			color: #ffffff;
+			font-weight: 700;
+			font-size: 48px;
+		}
+		.textContainer {
+			margin-top: 20px;
+			background-color: #ffffff;
+			border-radius: 10px;
+			padding: 40px 90px;
+			.authorInfo {
+				display: flex;
+				.avatar {
+					.userProfile {
+						width: 62px;
+						height: 62px;
+						object-fit: cover;
+						border-radius: 31px;
+					}
+				}
+				.authorDate {
+					margin-left: 25px;
+					.authorName {
+						font-weight: 600;
+						font-size: 28px;
+					}
+					.date {
+						font-weight: 500;
+						font-size: 16px;
+						color: #b6b6b6;
+					}
+				}
+			}
+		}
+		.text {
+			font-weight: 500;
+			font-size: 20px;
+			margin-top: 30px;
+		}
+		.stats {
+			margin-top: 40px;
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			font-weight: 500;
+			font-size: 20px;
+			.likeCommentShare {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.likes {
+					display: flex;
+					.likesCount {
+						margin-left: 8px;
+					}
+				}
+				.comments {
+					display: flex;
+					margin-left: 15px;
+					.commentsCount {
+						margin-left: 8px;
+					}
+				}
+				.share {
+					margin-left: 15px;
+				}
+			}
+			.views {
+				display: flex;
+				.viewsCount {
+					margin-left: 8px;
+				}
+			}
+		}
+	}
+}

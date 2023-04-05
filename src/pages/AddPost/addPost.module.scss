@@ -1,0 +1,40 @@
+.container {
+	width: 100vw;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	.bg {
+		.poster {
+			height: 700px;
+			background-color: #ebebeb;
+			display: flex;
+			justify-content: center;
+		}
+		.fill {
+			width: 100vw;
+			height: 1000px;
+			background-color: #f4f4f4;
+		}
+	}
+	.postContainer {
+		position: absolute;
+		z-index: 10;
+		width: 80vw;
+		top: 100px;
+		.addCover {
+			font-weight: 700;
+			font-size: 40px;
+			color: #b6b6b6;
+			margin-top: 100px;
+		}
+		.textContainer {
+			background-color: #ffffff;
+			border-radius: 10px;
+			padding: 40px 90px;
+			.textInput {
+				width: 500px;
+				height: 100px;
+			}
+		}
+	}
+}
