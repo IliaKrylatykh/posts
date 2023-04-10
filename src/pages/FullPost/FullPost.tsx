@@ -1,7 +1,8 @@
 import styles from './fullPost.module.scss'
 import FullPostSvg from './FullPostSvg'
+import { IPost } from '../../types/types'
 
-const FullPost = () => {
+const FullPost = ({ id, title, text, views }: IPost) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.bg}>

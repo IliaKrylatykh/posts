@@ -52,9 +52,12 @@
 		align-items: center;
 		width: 35vw;
 		font-size: 22px;
-		.linkHome {
+		.linkText {
 			text-decoration: none;
 			color: #b6b6b6;
+			&:hover {
+				color: #ffffff;
+			}
 		}
 		.themes {
 			display: flex;
@@ -74,4 +77,16 @@
 			object-fit: cover;
 		}
 	}
+	.linkText {
+		text-decoration: none;
+		color: #b6b6b6;
+		font-size: 22px;
+		&:hover {
+			color: #ffffff;
+		}
+	}
+}
+
+svg:hover {
+	fill: #ffffff;
 }

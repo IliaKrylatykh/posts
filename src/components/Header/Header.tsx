@@ -1,10 +1,15 @@
+import { useState } from 'react'
+import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
-
-import styles from './header.module.scss'
 import HeaderSvg from './HeaderSvg'
+import styles from './header.module.scss'
 
 const Header = () => {
-	const isAuth = false
+	const [isLogged, setLogged] = useState(false)
+
+	const toggleLogged = () => {
+		setLogged(!isLogged)
+	}
 
 	return (
 		<header className={styles.header}>
@@ -19,26 +24,37 @@ const Header = () => {
 					<input className={styles.input} type='text' placeholder='Search' />
 				</div>
 			</div>
-			<div className={styles.date}>8 февраля, 20:20</div>
-			{isAuth ? (
+			<div className={styles.date}>
+				<Moment format='D MMM, HH:mm' interval={1000} />
+			</div>
+			{isLogged ? (
 				<div className={styles.pages}>
-					<Link to='/' className={styles.linkHome}>
+					<Link to='/' className={styles.linkText}>
 						<div>Home</div>
 					</Link>
-					<div>Discussions</div>
-					<div className={styles.themes}>
-						<div>Themes</div>
-						<div className={styles.themeImg}>
-							<HeaderSvg id='themesMenu' />
+					<Link to='/' className={styles.linkText}>
+						<div>Discussions</div>
+					</Link>
+					<Link to='/' className={styles.linkText}>
+						<div className={styles.themes}>
+							<div>Themes</div>
+							<div className={styles.themeImg}>
+								<HeaderSvg id='themesMenu' />
+							</div>
 						</div>
-					</div>
-					<HeaderSvg id='add' />
+					</Link>
+					<Link to='/posts'>
+						<HeaderSvg id='add' />
+					</Link>
+
 					<HeaderSvg id='bell' />
-					<img
-						className={styles.userProfile}
-						src='https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2021/04/dogecoin.jpeg.jpg'
-						alt='user'
-					/>
+					<Link to='/' onClick={toggleLogged}>
+						<img
+							className={styles.userProfile}
+							src='https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2021/04/dogecoin.jpeg.jpg'
+							alt='user'
+						/>
+					</Link>
 				</div>
 			) : (
 				<div
@@ -48,9 +64,17 @@ const Header = () => {
 						justifyContent: 'space-between',
 					}}
 				>
-					<Link to='/'>Home</Link>
-					<Link to='/login'>Login</Link>
-					<Link to='/register'>
+					<Link to='/' className={styles.linkText}>
+						Home
+					</Link>
+					<Link to='/login' className={styles.linkText}>
+						Login
+					</Link>
+					<Link
+						to='/register'
+						onClick={toggleLogged}
+						className={styles.linkText}
+					>
 						<div>Register now!</div>
 					</Link>
 				</div>

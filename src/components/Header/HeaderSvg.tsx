@@ -1,8 +1,8 @@
-interface SvgProps {
+interface IHeaderSvg {
 	id: string
 }
 
-const HeaderSvg = ({ id }: SvgProps) => {
+const HeaderSvg = ({ id }: IHeaderSvg) => {
 	switch (id) {
 		case 'menu':
 			return (
